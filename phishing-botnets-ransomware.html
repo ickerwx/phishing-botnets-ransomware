@@ -1,0 +1,472 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <title>Phishing, Botnets, Ransomware</title>
+
+        <link rel="stylesheet" href="reveal/css/reveal.css">
+        <link rel="stylesheet" href="reveal/css/theme/beige.css">
+
+        <!-- Theme used for syntax highlighting of code -->
+        <link rel="stylesheet" href="reveal/lib/css/zenburn.css">
+        <style>
+            .reveal section img { border: none; }
+            .reveal p { margin: 40px 0; }
+        </style>
+
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <!-- Titel -->
+                <section data-background-image="img/globe.gif" style="filter: invert(100%)">
+                    <h1>Phishing<br />Botnets<br />Ransomware</h1>
+                    <p>Aktuelle Bedrohungen und was man als Privatanwender dagegen tun kann</p>
+                </section>
+
+                <!-- Vorstellung -->
+                <section>
+                    <section id="fragments">
+                        <h2 style="text-transform: lowercase; font-family: monospace"># whoami</h2>
+                        <p>
+                            René Werner<br />
+                            <i>hier steht normalerweise meine Abteilung</i>
+                        </p>
+                        <p class="fragment">
+                            Durchführung von Schwachstellenanalysen und Penetrationstests für <i>meinen Arbeitgeber</i> und für externe Kunden
+                        </p>
+                    </section>
+                </section>
+
+                <!-- Einführung ins Thema -->
+                <!-- Betroffenheit erzeugen -->
+                <section>
+                    <h2>Worum soll's gehen?</h2>
+                    <aside class="notes">Es folgen einige Vorfälle aus dem vergangenen Jahr. Die Auswahl ist mehr oder weniger willkürlich.</aside>
+                </section>
+
+                <!-- Einführung Phishing -->
+                <section>
+                    <section>
+                        <h2>Phishing</h2>
+                    </section>
+                    <section>
+                        <img data-src="img/intro_googledocs.png">
+                        <aside class="notes">
+                            große Kampagne im Mai 2017 <br>
+                            Link führte zu einer legitimen Seite <br>
+                        </aside>
+                    </section>
+                    <section>
+                        <img data-src="img/intro_heise_phishing.png">
+                        <aside class="notes">Private Postfächer von Politikern und Wirtschaftsbossen wurden angegriffen. Ziel war es, dass die Opfer auf einen Link klicken, wo dann die Passwörter abgefragt werden.</aside>
+                    </section>
+                    <section>
+                        <img data-src="img/intro_russland_us_wahlen.png">
+                        <aside class="notes">Russland wird beschuldigt, über gezieltes Phishing versucht zu haben, Zugriff auf die Rechner von hochrangigen Mitarbeitern zu bekommen</aside>
+                    </section>
+                </section>
+
+                <!-- Einführung Botnets -->
+               <section>
+                    <section>
+                        <h2>Botnets</h2>
+                    </section>
+                    <section>
+                        <img src="img/intro_botnets2.png">
+                        <aside class="notes">
+                            Kaufte eine IPCam bei Amazon <br>
+                            schloss sie ans Internet an <br>
+                            war innerhalb von Minuten infiziert
+                        </aside>
+                    </section>
+                    <section>
+                        <img data-src="img/intro_botnet1.png">
+                        <aside class="notes">
+                            wurde zunächst zum Verteilen von Malware eingesetzt, jetzt werden Aktienkurse manipuliert <br>
+                            zunächst billige Aktien kaufen, dann per Spam Falschmeldungen verbreiten und so den Kurs nach oben treiben
+                        </aside>
+                    </section>
+                    <section>
+                        <img data-src="img/intro_botnets3_ddos_dyn.png">
+                        <aside class="notes">Angriffe sorgten dafür, dass zeitweise große Dienste wie Reddit, Twitter oder auch die New York Times nicht erreichbar waren</aside>
+                    </section>
+                </section>
+
+                <!-- Einführung Ransomware -->
+                <section>
+                    <section>
+                        <h2>Ransomware</h2>
+                    </section>
+                    <section>
+                        <img data-src="img/intro_ransomware_1.PNG">
+                        <aside class="notes">
+                            Koreanischer Hoster infizierte sich mit Ransomware und verlor einen Großteil seiner Kundendaten (mehr als 150 Server).
+                        </aside>
+                    </section>
+                    <section>
+                        <img src="img/wannacry_bahn.jpg">
+                        <aside class="notes">
+                            Wannacry infizierte im Mai schnell eine Vielzahl von Systemen, obwohl seine Ausbreitung relativ schnell gestoppt werden konnte
+                        </aside>
+                    </section>
+                    <section>
+                        <img src="img/wannacry_honda.PNG">
+                        <aside class="notes">
+                            Obwohl die Ausbreitung gestoppt wurde und Patches seit Monaten verfügbar sind, wurde vor wenigen Tagen eine große Infektion bekannt
+                        </aside>
+                    </section>
+                </section>
+
+                <!-- Warum interessiert mich das... -->
+                <section>
+                    <section>
+                        <h2>Okay...</h2><img data-src="img/house_eyeroll.gif">
+                    <aside class="notes">Thema/Menge ist überwältigend, Relevanz für den Einzelnen nicht unbedingt ersichtlich <br>
+                    Was interessieren mich Wahlen in den USA? <br>
+                    Mich hackt ja eh keiner! <br>
+                        Ich habe einen Mac/Linux! <br>
+                    Unwillen, sich mit der Materie zu befassen <br>
+                        Ich habe keine Zeit dafür <br>
+                        Mein Computer ist nur ein Werkzeug, der soll funktionieren <br>
+                    Komplexität ist hoch, oft unverständlich <br>
+                    </aside>
+                    </section>
+                    <section>
+                        <h2>Persönliches Interesse</h2>
+                        <p>Computer sind überall</p>
+                        <p>Verlust der Kontrolle kostet Zeit, Nerven, ggf. Geld</p>
+                        <p>Daten haben häufig keinen materiellen, aber hohen ideellen Wert</p>
+                        <p>Auswirkungen erstrecken sich auch auf andere, man ist nicht isoliertes Opfer</p>
+                    </section>
+                    <section>
+                        <h2>Aber ich hab überhaupt keine Ahnung, was das alles bedeutet?</h2>
+                    </section>
+                </section>
+
+                <!-- Phishing -->
+                <section>
+                    <section>
+                        <h2>Phishing???</h2>
+                        <video autoplay loop>
+                            <source data-src="video/house_shrug.mp4" type="video/mp4" />
+                        </video>
+                    </section>
+                    <section>
+                        <p>Versuch, Vertrauen aufzubauen, um dieses Vertrauen dann für eigene Ziele zu missbrauchen</p>
+                        <p>verschiedenste Wege werden genutzt, Hauptvektor ist aber Mail</p>
+                        <p class="fragment">
+                            <img data-src="img/house_everybody_lies_no_loop.gif">
+                        </p>
+                    </section>
+                    <section>
+                        <h1>Demo Time</h1>
+                    </section>
+                    <section>
+                        <img data-src="img/intro_bad_phish.png" class="stretch">
+                        <aside class="notes">Nicht immer ist Phishing so leicht zu erkennen</aside>
+                    </section>
+                    <section>
+                        <h2>Warum geht das überhaupt?</h2>
+                    </section>
+                    <section>
+                        <p>E-Mail hat ein Vertrauensproblem mit eingebaut</p>
+                        <p>Es wird grundsätzlich erstmal angenommen, dass der Versender der ist, der er zu sein behauptet</p>
+                    </section>
+                    <section>
+                        <img data-src="img/smtp_made_easy.png" style="border:none; box-shadow:none">
+                        <aside class="notes">Ablauf ist tatsächlich deutlich komplizierter, und viele Provider analysieren eingehende Mail auf Hinweise nach Fälschungen. Dies ist aber offensichtlich ein komplexes Problem.</aside>
+                    </section>
+                    <section>
+                        <p>Absender müssen nicht gefälscht sein, sondern es können legitim klingende Domänen registriert werden</p>
+                        <ul>
+                            <li>account-google.com</li>
+                            <li>amazon-kundenservicecenter.de</li>
+                            <li>paypal-support.de</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <p>Große Provider wie Google oder Microsoft verwenden verschiedene Mechanismen, um Spam und Phishing zu erkennen</p>
+                        <p>Dennoch ist das Problem offensichtlich nicht leicht zu lösen</p>
+                    </section>
+                    <section>
+                        <h2>Okay, aber die Beispiele sahen jetzt echt nicht sehr überzeugend aus, hätte ich sofort erkannt!</h2>
+                        <img data-src="img/house_youre_good.gif">
+                    </section>
+                    <section>
+                        <img data-src="img/intro_phishing.PNG">
+                        <aside class="notes">Aktuell gehen verstärkt PayPal-Phishingmails herum</aside>
+                    </section>
+                    <section>
+                        <img data-src="img/phishing-amazon.jpg">
+                        <aside class="notes">Link führte zu gefälschter Login-Seite</aside>
+                    </section>
+                    <section>
+                        <img data-src="img/intro_googledocs.jpg">
+                        <aside class="notes">das hier ist nicht gefälscht, sondern ein korrekter Google-Dialog</aside>
+                    </section>
+                    <section>
+                        <img data-src="img/intro_googledocs_2.jpg">
+                        <aside class="notes">Nur das genaue Prüfen zeigte, dass etwas auffällig ist. Klickte man Allow, bekam der Angreifer Zugriff auf das Adressbuch und persönliche Informationen wie E-Mails.</aside>
+                    </section>
+                    <section>
+                        <p>Beinahe ein Drittel aller Nutzer klickt auf Phishing-Links</p>
+                        <p>Fast 20% geben Zugangsdaten auf Phishing-Seiten ein</p>
+                        <p>Bis zu 72% hatten alte, angreifbare Erweiterungen und Plugins installiert</p>
+                    </section>
+                    <section>
+                        <p>Phishing ist einfach und automatisierbar</p>
+                        <p>Phishing ist ein Massengeschäft</p>
+                        <p>Phishing funktioniert</p>
+                        <p class="fragment"><img data-src="img/house_everybody_lies2_no_loop.gif"></p>
+                    </section>
+                </section>
+
+                <section>
+                    <h2>Das Thema deprimiert mich, war da nicht noch was?</h2>
+                </section>
+
+                <!-- Botnets -->
+                <section>
+                    <section>
+                        <h2>Botnets</h2>
+                        <img data-src="img/botnet.gif">
+                    </section>
+                    <section>
+                        <p>Grundsätzlich kann man sich mit Phishing eine Vielzahl an Schadsoftware einfangen</p>
+                        <p>Aber: Wir haben es hier mit Kriminellen mit wirtschaftlichen Motiven zu tun</p>
+                        <p>Aufwand-Nutzen-Verhältnis spielt eine große Rolle</p>
+                    </section>
+                    <section>
+                        <p>Botnetze sind große, verteilte Netzwerke, die inzwischen größtenteils dezentral gesteuert werden</p>
+                        <p>Sie ermöglichen die Kontrolle der infizierten Systeme aus der Ferne</p>
+                        <p>Niedrige Kosten für Unterhalt des Netzes, wenig Wissen erforderlich</p>
+                        <p>Zahl nimmt stetig zu</p>
+                    </section>
+                    <section>
+                        <h2>Und wie verdient man jetzt damit Geld?</h2>
+                        <ul>
+                            <li>DDoS-Angriffe</li>
+                            <li>Zugriff auf vertrauliche Daten</li>
+                            <li>Versand von Spam oder Phishing-Mails</li>
+                            <li>Klickbetrug</li>
+                            <li>Verteilen von Schadsoftware</li>
+                            <aside class="notes">
+                                DDoS: Wettbewerber, Erpressung<br>Preis reicht von unter 100 bis mehrere k$ pro Tag<br>
+                                Vertr. Daten: PII, FI, Creds, Kontakte
+                            </aside>
+                        </ul>
+                    </section>
+                    <section>
+                        <p>Als Betreiber eines Botnets hat man also die Wahl...</p>
+                        <p>...oder man macht einfach alles!</p>
+                    </section>
+                    <section>
+                        <h2>Wie baut man denn so ein Botnetz?</h2>
+                        <img data-src="img/asking_4a_friend.gif">
+                    </section>
+                    <section>
+                        <p>Man kauft ein Botnet Kit</p>
+                        <p>Man sucht sich eine Infrastruktur zum Verteilen</p>
+                        <p>Phishing-Mails bieten sich an</p>
+                        <aside class="notes">
+                            Kosten für ein Kit liegen bei wenigen tausend Dollar <br>
+                            Bestehende Netze können gemietet werden, um eigene Infrastruktur zu bootstrappen <br>
+                        </aside>
+                    </section>
+                    <section>
+                        <p>Botnet Kits werden übrigens auch gerne "sicherheitskopiert"</p>
+                        <p>Der Quelltext für einen sehr erfolgreichen Bot, der embedded-Geräte angriff, ist frei verfügbar und wurde bereits für Abkömmlinge verwendet</p>
+                        <img data-src="img/house_typing.gif">
+                    </section>
+                    <section>
+                        <h2>Wie kontrolliert man denn sowas?</h2>
+                    </section>
+                    <section>
+                        <p>Es gibt verschiedene Ansätze dazu</p>
+                        <p>Klassisch ist ein zentraler Server zur Kontrolle</p>
+                        <p>man spricht vom Command-and-Control-Server (C2S)</p>
+                        <p>Gerne werden (oder eher wurden) IRC-Server verwendet</p>
+                    </section>
+                    <section>
+                        <img data-src="img/botnet_c2s_structure.jpg">
+                    </section>
+                    <section>
+                        <img data-src="img/botnet_c2s_1.gif">
+                    </section>
+                    <section>
+                        <p>Diese Methode ist mehr oder weniger überholt</p>
+                        <p>Derartige Netze werden schnell übernommen, da es einen Single Point of Failure gibt</p>
+                    </section>
+                    <section>
+                        <p>Alternative sind so genannte Fast-Flux-Netze</p>
+                        <p>Hier wechselt der Kontrollserver in schneller Folge, es gibt viele C2-Server</p>
+                    </section>
+                    <section>
+                        <img class="stretch" data-src="img/botnet_fastflux.png">
+                    </section>
+                    <section>
+                        <p>Aktuell werden die anzufragenden Namen dynamisch generiert</p>
+                        <p>Zukünftig wird erwartet, dass Botnets immer mehr Gebrauch von P2P und Anonymisierungsdiensten machen werden</p>
+                        <p>Ein C2-Server, der bspw. über Tor angesprochen wird, ist nur mit größtem Aufwand zu identifizieren</p>
+                        <p class="fragment">Wie auch schon bei Phishing gilt: Botnetze sind ein altes Phänomen, dass offensichtlich nur schwer in den Griff zu bekommen ist.</p>
+                    </section>
+                </section>
+
+                <section>
+                    <h2>Na so richtig ermutigend war das jetzt aber nicht...</h2>
+                    <img data-src="img/house_resignation.gif">
+                </section>
+
+                <!-- Ransomware -->
+                <section>
+                    <section>
+                        <h2>Ransomware</h2>
+                        <img data-src="img/ransom_money.gif">
+                    </section>
+                    <section>
+                        <p>Ransomware ist seit einigen Jahren ein immer mehr um sich greifendes Problem</p>
+                        <p>Die heute gängigsten Varianten verschlüsseln die Daten des Nutzers und verlangen Geld, bevor die Daten entschlüsselt werden</p>
+                        <p>Konzept bekannt seit Ende der 90'er, seit ca. 2013 ein wesentliches Geschäftsmodell</p>
+                    </section>
+                    <section>
+                        <p>Zwischen 2013 und 2014 gingen mehrere Varianten von Cryptolocker um</p>
+                        <p>Man nimmt an, dass die Betreiber mehrere Millionen US-Dollar damit verdienten</p>
+                        <img src="img/ransom_money2.gif">
+                    </section>
+                    <section>
+                        <p>Zahlung erfolgt in der Regel über Bitcoin</p>
+                        <p>Teilweise bemerkenswert guter "Kundenservice"</p>
+                        <p>Viele Opfer brauchen Unterstützung beim Kauf von Bitcoin und beim Bezahlen</p>
+                    </section>
+                    <section>
+                        <p>Der letzte große Fall war <h3>WannaCry</h3></p>
+                        <p>Nutzte vermutlich nicht Phishing als Vektor</p>
+                        <p>Verteilte sich über Schwachstelle in Windows</p>
+                    </section>
+                    <section>
+                        <img src="img/wannacry_bahn.jpg">
+                        <aside class="notes">
+                            Verschiedenste Ministerien in verschiedenen Ländern, internationale Konzerne waren betroffen <br>
+                            DB: Anzeigetafeln, Videoüberwachung, Leitstellen <br>
+                        </aside>
+                    </section>
+                    <section>
+                        <p>Im Gegensatz zu den meisten Ransomware-Varianten verbreitete sich WannaCry aktiv selbst weiter</p>
+                        <p>Durch einen Zufall und einen Fehler im Design der Software konnte eine weitere Verbreitung verhindert werden</p>
+                        <p>Dennoch wurden in der relativ kurzen Zeit mehrere 100k Rechner in 150 Ländern infiziert</p>
+                    </section>
+                    <section>
+                        <h1>Demo Time</h1>
+                    </section>
+                    <section>
+                        <h2>Und was ist, wenn <strike>ich</strike> meine Oma sich sowas eingefangen hat?</h2>
+                        <p>Grundsätzlich kann es im Einzelfall Entschlüsselungstools geben</p>
+                        <p>Hat die Ransomware aber keine Fehler, hat man drei Optionen</p>
+                    </section>
+                    <section>
+                        <p class="fragment">Bezahlen</p>
+                        <p class="fragment">Datenverlust akzeptieren</p>
+                        <p class="fragment">Backups einspielen</p>
+                        <aside class="notes">
+                            Verlássliche Statistiken zur Zahlung gibt es keine, nur Anekdoten <br>
+                            beste Maßnahme bei Befall sind Backups
+                        </aside>
+                    </section>
+                </section>
+
+                <section>
+                    <h2>Backups???</h2>
+                    <img data-src="img/house_mimimi.gif">
+                </section>
+                <!-- Gegenmaßnahmen -->
+                <section>
+                    <section>
+                        <h2>Praktikable Gegenmaßnahmen</h2>
+                        <img data-src="img/gegen_decke.gif">
+                    </section>
+                    <section>
+                        <h2>Updates</h2>
+                        <p>Zeitnahes Einspielen von Updates ist eine der besten Maßnahmen gegen Schadsoftware</p>
+                        <p>Betriebssystem und alle installierten Anwendungen</p>
+                        <img class="stretch" data-src="img/house_eyeroll2.gif">
+                        <aside class="notes">Augenrollen. Jeder weiß es, zu viele machen es nicht</aside>
+                    </section>
+                    <section>
+                        <h2>Software deinstallieren</h2>
+                        <p>Je weniger installierte Programme, desto weniger angreifbare Programme</p>
+                    </section>
+                    <section>
+                        <h2>Backups</h2>
+                        <p>Sichern von wichtigen Daten auf ein externes Medium</p>
+                        <p>USB-Festplatten sind günstig und im Ernstfall Gold wert</p>
+                    </section>
+                    <section>
+                        <h2>Nicht als Administrator arbeiten</h2>
+                        <p>Eigenes Konto sollte ein eingeschränkter Nutzer sein</p>
+                        <p>Im alltäglichen Gebrauch reicht das völlig aus</p>
+                        <p>Kann auch im Nachhinein noch umgesetzt werden</p>
+                    </section>
+                    <section>
+                        <h2>Gesunde Skepsis</h2>
+                        <p>Habe ich überhaupt ein Konto dort?</p>
+                        <p>Sowas hat mir der/die ja noch nie geschrieben?</p>
+                    </section>
+                    <section>
+                        <h2>Links prüfen</h2>
+                        <p>Mit der Maus über den Link ohne zu klicken, Ziel anschauen</p>
+                        <p>In den meisten Fällen: nicht auf den Link klicken ist die richtige Wahl</p>
+                    </section>
+                    <section>
+                        <h2>Anhänge nicht öffnen</h2>
+                        <p>Anhänge werden von großen Unternehmen nur noch sehr selten verschickt</p>
+                        <p>Datenaustausch, Rechnungen etc. erfolgt über Kundenportal</p>
+                    </section>
+                    <section>
+                        <h2>Werbeblocker</h2>
+                        <p>Macht die Internetnutzung im Allgemeinen deutlich erträglicher</p>
+                        <p>Kann bestimmte Infektionswege blockieren</p>
+                        <p>Hat aber auch Auswirkungen auf die Privatsphäre, je nach Art des Blockers</p>
+                    </section>
+                    <section>
+                        <h2>Antivirensoftware</h2>
+                        <p>Zweischneidiges Schwert</p>
+                        <p>In der Vergangenheit gab es immer wieder teils gravierende Schwachstellen in AV-Programmen</p>
+                        <p>Ich denke, aktuell überwiegt für viele noch der Nutzen</p>
+                    </section>
+                </section>
+
+                <!-- Fragen -->
+                <section>
+                    <h1>Noch Fragen?</h1>
+                    <img width=500 height=350 src="img/jenlaw_qestions.gif">
+                </section>
+                <!-- Kontakt -->
+                <section>
+                    <h1>Kontakt</h2>
+                    <p>René Werner</p>
+                    <p>meine Mailadresse</p>
+                    <p>Telefon XXXX</p>
+                </section>
+
+            </div>
+        </div>
+
+        <script src="reveal/lib/js/head.min.js"></script>
+        <script src="reveal/js/reveal.js"></script>
+
+        <script>
+            // More info about config & dependencies:
+            // - https://github.com/hakimel/reveal.js#configuration
+            // - https://github.com/hakimel/reveal.js#dependencies
+            Reveal.initialize({
+                dependencies: [
+                    { src: 'reveal/plugin/notes/notes.js', async: true },
+                    { src: 'reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'reveal/plugin/zoom-js/zoom.js', async: true }               ]
+            });
+        </script>
+    </body>
+</html>
